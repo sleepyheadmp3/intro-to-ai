@@ -1,0 +1,5 @@
+root: R
+node R MAX
+node L LEAF
+utility L -3
+edge R a L

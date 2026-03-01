@@ -1,0 +1,42 @@
+root: R
+node R MIN
+
+node A MAX
+node A1 LEAF
+node A2 LEAF
+node A3 LEAF
+
+node B MAX
+node B1 LEAF
+node B2 LEAF
+node B3 LEAF
+
+node C MAX
+node C1 LEAF
+node C2 LEAF
+
+utility A1 2
+utility A2 1
+utility A3 0
+
+utility B1 3
+utility B2 -100
+utility B3 4
+
+utility C1 2
+utility C2 5
+
+edge R a A
+edge R b B
+edge R c C
+
+edge A x A1
+edge A y A2
+edge A z A3
+
+edge B x B1
+edge B y B2
+edge B z B3
+
+edge C x C1
+edge C y C2

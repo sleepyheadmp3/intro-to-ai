@@ -1,0 +1,4 @@
+minimax: a 8
+alphabeta: a 8
+minimax_leaves: A1L1 A1L2 A2L1 A2L2 B1L1 B1L2 B2L1 B2L2 C1L1 C1L2 C2L1 C2L2
+alphabeta_leaves: A1L1 A1L2 A2L1 A2L2 B1L1 B1L2 C1L1 C1L2

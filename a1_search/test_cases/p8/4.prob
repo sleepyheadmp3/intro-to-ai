@@ -1,0 +1,66 @@
+root: R
+node R MAX
+
+node A MIN
+node A1 MAX
+node A2 MAX
+node A1L1 LEAF
+node A1L2 LEAF
+node A2L1 LEAF
+node A2L2 LEAF
+
+node B MIN
+node B1 MAX
+node B2 MAX
+node B1L1 LEAF
+node B1L2 LEAF
+node B2L1 LEAF
+node B2L2 LEAF
+
+node C MIN
+node C1 MAX
+node C2 MAX
+node C1L1 LEAF
+node C1L2 LEAF
+node C2L1 LEAF
+node C2L2 LEAF
+
+utility A1L1 8
+utility A1L2 9
+utility A2L1 7
+utility A2L2 8
+
+utility B1L1 7
+utility B1L2 6
+utility B2L1 5
+utility B2L2 4
+
+utility C1L1 8
+utility C1L2 0
+utility C2L1 1
+utility C2L2 2
+
+edge R a A
+edge R b B
+edge R c C
+
+edge A a1 A1
+edge A a2 A2
+edge A1 l1 A1L1
+edge A1 l2 A1L2
+edge A2 l1 A2L1
+edge A2 l2 A2L2
+
+edge B b1 B1
+edge B b2 B2
+edge B1 l1 B1L1
+edge B1 l2 B1L2
+edge B2 l1 B2L1
+edge B2 l2 B2L2
+
+edge C c1 C1
+edge C c2 C2
+edge C1 l1 C1L1
+edge C1 l2 C1L2
+edge C2 l1 C2L1
+edge C2 l2 C2L2
