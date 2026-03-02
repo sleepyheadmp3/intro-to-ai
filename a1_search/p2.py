@@ -2,8 +2,28 @@ import sys, grader, parse
 from collections import deque
 
 def bfs_search(problem):
-    #Your p2 code here
-    solution = 'Ar B C D\nAr C G'
+    # frontier as FIFO deque
+    start = problem["start"]
+    goal = problem["goals"]
+    frontier = deque([[start]])
+    explored = set()
+    explored_order = []
+    solution_path = []
+
+    while frontier:
+        path = frontier.popleft()
+        node = str(path[-1])
+        if node in goal:
+            solution_path = path
+            break
+        if node not in explored:
+            explored_order.append(node)
+            explored.add(node)
+            if node in problem["adj"]:
+                for child in problem["adj"][node]:
+                    frontier.append(path + [child])
+
+    solution = " ".join(explored_order) + "\n" + " ".join(solution_path)
     return solution
 
 if __name__ == "__main__":
