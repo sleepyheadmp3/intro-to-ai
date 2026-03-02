@@ -2,8 +2,8 @@ import os, sys
 def read_graph_search_problem(file_path):
     start = None
     goals = None
-    heuristics = None
-    adj = None
+    heuristics = {}
+    adj = {}
 
     with open(file_path, 'r') as f:
         start = f.readline().strip().split()[1]
@@ -16,7 +16,7 @@ def read_graph_search_problem(file_path):
                 heuristics[line[0]] = int(line[1])
             elif len(line) == 3:
                 if line[0] not in adj:
-                    adj[line[0]] = []
+                    adj[line[0]] = {}
                 adj[line[0]][line[1]] = float(line[2])
             line = f.readline()
 
