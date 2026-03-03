@@ -1,7 +1,8 @@
 import sys, parse, grader
 from heapq import heappush, heappop
+
 def ucs_search(problem):
-    # frontier as priority queue
+    # frontier as priority queue with path costs
     start = problem["start"]
     goal = problem["goals"]
     explored = set()
