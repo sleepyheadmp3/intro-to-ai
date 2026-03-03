@@ -51,11 +51,33 @@ def read_8queens_search_problem(file_path):
 
 
 def read_game_tree_problem(filename):
-    # your p8 code here
     root = None
-    node_type = None
-    utility = None
-    edges = None
+    node_type = {}
+    utility = {}
+    edges = {}
+
+    with open(filename, 'r') as f:
+        line = f.readline()
+        while line:
+            line = line.strip()
+            if line:
+                args = line.split()
+                if args[0] == "root:" and len(args) == 2:
+                    root = args[1]
+                elif args[0] == "node" and len(args) == 3:
+                    node_type[args[1]] = args[2]
+                elif args[0] == "utility" and len(args) == 3:
+                    utility[args[1]] = int(args[2])
+                elif args[0] == "edge" and len(args) == 4:
+                    parent = args[1]
+                    action = args[2]
+                    child = args[3]
+                    if parent not in edges:
+                        edges[parent] = []
+                    edges[parent].append((action, child))
+
+            line = f.readline()
+
     return {
         "root": root,
         "node_type": node_type,
