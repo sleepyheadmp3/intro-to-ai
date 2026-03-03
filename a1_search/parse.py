@@ -27,10 +27,21 @@ def read_graph_search_problem(file_path):
         "adj": adj,
     }
 
+
 def read_8queens_search_problem(file_path):
-    #Your p6 code here
-    board = None
-    queen_rows = None
+    board = []
+    queen_rows = [-1] * 8
+    i = 0
+    with open(file_path, 'r') as f:
+        line = f.readline()
+        while line:
+            row = line.strip().split()
+            board.append(row)
+            for col, value in enumerate(row):
+                if value == 'q':
+                    queen_rows[col] = i
+            i += 1
+            line = f.readline()
 
     # If some columns are missing queens, keep -1 (shouldn't happen in provided tests)
     return {
@@ -40,7 +51,7 @@ def read_8queens_search_problem(file_path):
 
 
 def read_game_tree_problem(filename):
-    "your p8 code here"
+    # your p8 code here
     root = None
     node_type = None
     utility = None
@@ -51,6 +62,7 @@ def read_game_tree_problem(filename):
         "utility": utility,
         "edges": edges,
     }
+
 
 if __name__ == "__main__":
     if len(sys.argv) == 3:
