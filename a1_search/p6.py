@@ -3,16 +3,18 @@ import sys, parse, grader
 def number_of_attacks(problem):
     board = problem["board"]
     q_rows = problem["queen_rows"]
-
-    n = len(board)
+    global result_list
+    result_list = []
     queens = []
-    result_rows = []
+    result = []
+    n = len(board)
 
     # get queen coordinates
     for i in range(8):
         queens.append([q_rows[i], i])
         
     for i in range(n):      # row
+        row_list = []
         row_result = []
         for j in range(n):      # col
             moved = []
@@ -36,10 +38,17 @@ def number_of_attacks(problem):
                 row_result.append(" " + str(attacks))
             else:
                 row_result.append(str(attacks))
-        result_rows.append(" ".join(row_result))
+            row_list.append(attacks)
 
-    solution = "\n".join(result_rows)
+        result_list.append(row_list)
+        result.append(" ".join(row_result))
+
+    solution = "\n".join(result)
     return solution
+
+def get_result_list(problem):
+    number_of_attacks(problem)
+    return result_list
 
 if __name__ == "__main__":
     test_case_id = int(sys.argv[1])
